@@ -1,0 +1,762 @@
+[
+  {
+    "name": "Google",
+    "domain": "google.com",
+    "category": "productivity",
+    "icon": "https://www.google.com/favicon.ico",
+    "deletion_url": "https://myaccount.google.com/delete-services-or-account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Go to Google Account > Data & Privacy > Delete your Google Account",
+    "email_patterns": {"senders": ["accounts.google.com", "googlemail.com"], "subjects": ["Google Account"]}
+  },
+  {
+    "name": "Facebook",
+    "domain": "facebook.com",
+    "category": "social_media",
+    "icon": "https://www.facebook.com/favicon.ico",
+    "deletion_url": "https://www.facebook.com/help/delete_account",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Settings > Your Facebook Information > Deactivation and Deletion. 30-day grace period.",
+    "email_patterns": {"senders": ["facebookmail.com"], "subjects": ["Welcome to Facebook", "Confirm your"]}
+  },
+  {
+    "name": "Twitter / X",
+    "domain": "twitter.com",
+    "category": "social_media",
+    "icon": "https://abs.twimg.com/favicons/twitter.3.ico",
+    "deletion_url": "https://twitter.com/settings/deactivate",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > Deactivate account. Data is deleted after 30 days.",
+    "email_patterns": {"senders": ["twitter.com", "x.com"], "subjects": ["Welcome to", "Confirm your"]}
+  },
+  {
+    "name": "Instagram",
+    "domain": "instagram.com",
+    "category": "social_media",
+    "icon": "https://www.instagram.com/favicon.ico",
+    "deletion_url": "https://www.instagram.com/accounts/remove/request/permanent/",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Accounts Center > Personal details > Account ownership > Deactivation or deletion",
+    "email_patterns": {"senders": ["mail.instagram.com"], "subjects": ["Welcome to Instagram"]}
+  },
+  {
+    "name": "LinkedIn",
+    "domain": "linkedin.com",
+    "category": "professional",
+    "icon": "https://www.linkedin.com/favicon.ico",
+    "deletion_url": "https://www.linkedin.com/psettings/account-management",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Settings > Account management > Close account",
+    "email_patterns": {"senders": ["linkedin.com"], "subjects": ["Welcome to LinkedIn", "LinkedIn"]}
+  },
+  {
+    "name": "Amazon",
+    "domain": "amazon.com",
+    "category": "shopping",
+    "icon": "https://www.amazon.com/favicon.ico",
+    "deletion_url": "https://www.amazon.com/privacy/data-deletion",
+    "deletion_difficulty": 4,
+    "deletion_notes": "Must contact customer service or use the Close Account page. May take up to 90 days.",
+    "email_patterns": {"senders": ["amazon.com"], "subjects": ["Welcome to Amazon", "Your Amazon"]}
+  },
+  {
+    "name": "Netflix",
+    "domain": "netflix.com",
+    "category": "streaming",
+    "icon": "https://www.netflix.com/favicon.ico",
+    "deletion_url": "https://www.netflix.com/cancelplan",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Cancel membership first, then account auto-deletes after 10 months of inactivity.",
+    "email_patterns": {"senders": ["netflix.com", "mailer.netflix.com"], "subjects": ["Welcome to Netflix"]}
+  },
+  {
+    "name": "Spotify",
+    "domain": "spotify.com",
+    "category": "streaming",
+    "icon": "https://www.spotify.com/favicon.ico",
+    "deletion_url": "https://support.spotify.com/account_settings/privacy_settings/",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Contact support or use the Close Account page in privacy settings.",
+    "email_patterns": {"senders": ["spotify.com"], "subjects": ["Welcome to Spotify", "Your Spotify"]}
+  },
+  {
+    "name": "Apple",
+    "domain": "apple.com",
+    "category": "technology",
+    "icon": "https://www.apple.com/favicon.ico",
+    "deletion_url": "https://privacy.apple.com/",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Go to privacy.apple.com, sign in, and request account deletion.",
+    "email_patterns": {"senders": ["apple.com", "id.apple.com"], "subjects": ["Your Apple", "Apple ID"]}
+  },
+  {
+    "name": "Microsoft",
+    "domain": "microsoft.com",
+    "category": "technology",
+    "icon": "https://www.microsoft.com/favicon.ico",
+    "deletion_url": "https://account.live.com/closeaccount.aspx",
+    "deletion_difficulty": 3,
+    "deletion_notes": "60-day waiting period. Must remove all associated subscriptions first.",
+    "email_patterns": {"senders": ["microsoft.com", "live.com", "outlook.com"], "subjects": ["Microsoft account", "Welcome"]}
+  },
+  {
+    "name": "GitHub",
+    "domain": "github.com",
+    "category": "developer",
+    "icon": "https://github.com/favicon.ico",
+    "deletion_url": "https://github.com/settings/admin",
+    "deletion_difficulty": 1,
+    "deletion_notes": "Settings > Account > Delete your account. Immediate.",
+    "email_patterns": {"senders": ["github.com"], "subjects": ["Welcome to GitHub", "Please verify"]}
+  },
+  {
+    "name": "Reddit",
+    "domain": "reddit.com",
+    "category": "social_media",
+    "icon": "https://www.reddit.com/favicon.ico",
+    "deletion_url": "https://www.reddit.com/settings/account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > Account > Delete Account. Posts remain but are disassociated.",
+    "email_patterns": {"senders": ["reddit.com", "redditmail.com"], "subjects": ["Welcome to Reddit", "Verify"]}
+  },
+  {
+    "name": "Discord",
+    "domain": "discord.com",
+    "category": "social_media",
+    "icon": "https://discord.com/favicon.ico",
+    "deletion_url": "https://support.discord.com/hc/en-us/articles/212500837",
+    "deletion_difficulty": 2,
+    "deletion_notes": "User Settings > My Account > Delete Account. 14-30 day waiting period.",
+    "email_patterns": {"senders": ["discord.com"], "subjects": ["Welcome to Discord", "Verify"]}
+  },
+  {
+    "name": "Slack",
+    "domain": "slack.com",
+    "category": "productivity",
+    "icon": "https://slack.com/favicon.ico",
+    "deletion_url": "https://slack.com/account/settings",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Workspace owners must delete. Individual accounts can be deactivated.",
+    "email_patterns": {"senders": ["slack.com"], "subjects": ["Slack", "joined"]}
+  },
+  {
+    "name": "Dropbox",
+    "domain": "dropbox.com",
+    "category": "cloud_storage",
+    "icon": "https://www.dropbox.com/favicon.ico",
+    "deletion_url": "https://www.dropbox.com/account/delete",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account settings > Delete account. Cancel any paid plan first.",
+    "email_patterns": {"senders": ["dropbox.com", "dropboxmail.com"], "subjects": ["Welcome to Dropbox", "Verify"]}
+  },
+  {
+    "name": "Pinterest",
+    "domain": "pinterest.com",
+    "category": "social_media",
+    "icon": "https://www.pinterest.com/favicon.ico",
+    "deletion_url": "https://www.pinterest.com/settings/privacy",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > Privacy and data > Delete your data and account.",
+    "email_patterns": {"senders": ["pinterest.com"], "subjects": ["Welcome to Pinterest"]}
+  },
+  {
+    "name": "Snapchat",
+    "domain": "snapchat.com",
+    "category": "social_media",
+    "icon": "https://www.snapchat.com/favicon.ico",
+    "deletion_url": "https://accounts.snapchat.com/accounts/delete_account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Deactivated for 30 days, then permanently deleted.",
+    "email_patterns": {"senders": ["snapchat.com"], "subjects": ["Welcome to Snapchat"]}
+  },
+  {
+    "name": "TikTok",
+    "domain": "tiktok.com",
+    "category": "social_media",
+    "icon": "https://www.tiktok.com/favicon.ico",
+    "deletion_url": "https://support.tiktok.com/en/account-and-privacy/deleting-an-account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Profile > Settings > Manage account > Delete account. 30-day grace period.",
+    "email_patterns": {"senders": ["tiktok.com"], "subjects": ["TikTok", "Welcome"]}
+  },
+  {
+    "name": "Twitch",
+    "domain": "twitch.tv",
+    "category": "streaming",
+    "icon": "https://www.twitch.tv/favicon.ico",
+    "deletion_url": "https://www.twitch.tv/settings/profile",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > Disable Account. Can also request full deletion via support.",
+    "email_patterns": {"senders": ["twitch.tv"], "subjects": ["Welcome to Twitch", "Twitch"]}
+  },
+  {
+    "name": "Uber",
+    "domain": "uber.com",
+    "category": "transportation",
+    "icon": "https://www.uber.com/favicon.ico",
+    "deletion_url": "https://help.uber.com/h/24010fe7-7a67-4ee5-9938-c734000b144a",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Must be done through the app: Account > Privacy settings > Delete account.",
+    "email_patterns": {"senders": ["uber.com"], "subjects": ["Welcome to Uber"]}
+  },
+  {
+    "name": "Airbnb",
+    "domain": "airbnb.com",
+    "category": "travel",
+    "icon": "https://www.airbnb.com/favicon.ico",
+    "deletion_url": "https://www.airbnb.com/account-settings/personal-info",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Account settings > Personal info > scroll to bottom > Request account deletion.",
+    "email_patterns": {"senders": ["airbnb.com"], "subjects": ["Welcome to Airbnb"]}
+  },
+  {
+    "name": "PayPal",
+    "domain": "paypal.com",
+    "category": "finance",
+    "icon": "https://www.paypal.com/favicon.ico",
+    "deletion_url": "https://www.paypal.com/myaccount/settings/close",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Must have zero balance and no pending transactions. Settings > Account > Close Account.",
+    "email_patterns": {"senders": ["paypal.com"], "subjects": ["Welcome to PayPal"]}
+  },
+  {
+    "name": "Stripe",
+    "domain": "stripe.com",
+    "category": "finance",
+    "icon": "https://stripe.com/favicon.ico",
+    "deletion_url": "https://dashboard.stripe.com/settings/account",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Dashboard > Settings > Account > Close account. Must resolve all balances first.",
+    "email_patterns": {"senders": ["stripe.com"], "subjects": ["Stripe", "Welcome"]}
+  },
+  {
+    "name": "eBay",
+    "domain": "ebay.com",
+    "category": "shopping",
+    "icon": "https://www.ebay.com/favicon.ico",
+    "deletion_url": "https://www.ebay.com/help/account/closing-account/closing-ebay-account?id=4189",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Must complete all transactions and resolve fees. My eBay > Account > Close Account.",
+    "email_patterns": {"senders": ["ebay.com"], "subjects": ["Welcome to eBay"]}
+  },
+  {
+    "name": "Etsy",
+    "domain": "etsy.com",
+    "category": "shopping",
+    "icon": "https://www.etsy.com/favicon.ico",
+    "deletion_url": "https://www.etsy.com/your/account/privacy",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account settings > Privacy > Request deletion of your account.",
+    "email_patterns": {"senders": ["etsy.com", "mail.etsy.com"], "subjects": ["Welcome to Etsy"]}
+  },
+  {
+    "name": "Notion",
+    "domain": "notion.so",
+    "category": "productivity",
+    "icon": "https://www.notion.so/favicon.ico",
+    "deletion_url": "https://www.notion.so/my-account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > My Account > Delete my account.",
+    "email_patterns": {"senders": ["notion.so"], "subjects": ["Welcome to Notion"]}
+  },
+  {
+    "name": "Trello",
+    "domain": "trello.com",
+    "category": "productivity",
+    "icon": "https://trello.com/favicon.ico",
+    "deletion_url": "https://trello.com/account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account settings > Delete Account. Part of Atlassian account.",
+    "email_patterns": {"senders": ["trello.com"], "subjects": ["Welcome to Trello"]}
+  },
+  {
+    "name": "Zoom",
+    "domain": "zoom.us",
+    "category": "productivity",
+    "icon": "https://zoom.us/favicon.ico",
+    "deletion_url": "https://zoom.us/account/setting",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Admin > Account Management > Account Profile > Terminate My Account.",
+    "email_patterns": {"senders": ["zoom.us"], "subjects": ["Welcome to Zoom", "Zoom"]}
+  },
+  {
+    "name": "Adobe",
+    "domain": "adobe.com",
+    "category": "productivity",
+    "icon": "https://www.adobe.com/favicon.ico",
+    "deletion_url": "https://account.adobe.com/privacy",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Must cancel all subscriptions first. Privacy settings > Delete account.",
+    "email_patterns": {"senders": ["adobe.com"], "subjects": ["Welcome to Adobe", "Adobe"]}
+  },
+  {
+    "name": "Canva",
+    "domain": "canva.com",
+    "category": "productivity",
+    "icon": "https://www.canva.com/favicon.ico",
+    "deletion_url": "https://www.canva.com/settings/account",
+    "deletion_difficulty": 1,
+    "deletion_notes": "Account Settings > scroll to bottom > Delete account.",
+    "email_patterns": {"senders": ["canva.com"], "subjects": ["Welcome to Canva"]}
+  },
+  {
+    "name": "Steam",
+    "domain": "steampowered.com",
+    "category": "gaming",
+    "icon": "https://store.steampowered.com/favicon.ico",
+    "deletion_url": "https://help.steampowered.com/en/wizard/HelpDeleteAccount",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Support > Account > Delete Account. 30-day waiting period. Loses all games.",
+    "email_patterns": {"senders": ["steampowered.com", "steammedia.com"], "subjects": ["Welcome to Steam"]}
+  },
+  {
+    "name": "Epic Games",
+    "domain": "epicgames.com",
+    "category": "gaming",
+    "icon": "https://www.epicgames.com/favicon.ico",
+    "deletion_url": "https://www.epicgames.com/account/personal",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Account > Personal > Delete Account. 14-day waiting period.",
+    "email_patterns": {"senders": ["epicgames.com"], "subjects": ["Epic Games", "Welcome"]}
+  },
+  {
+    "name": "Booking.com",
+    "domain": "booking.com",
+    "category": "travel",
+    "icon": "https://www.booking.com/favicon.ico",
+    "deletion_url": "https://account.booking.com/mysettings/privacy",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Must complete or cancel all reservations. Account settings > Privacy > Delete account.",
+    "email_patterns": {"senders": ["booking.com"], "subjects": ["Booking.com", "Welcome"]}
+  },
+  {
+    "name": "Duolingo",
+    "domain": "duolingo.com",
+    "category": "education",
+    "icon": "https://www.duolingo.com/favicon.ico",
+    "deletion_url": "https://www.duolingo.com/settings/account",
+    "deletion_difficulty": 1,
+    "deletion_notes": "Settings > Account > Delete Account.",
+    "email_patterns": {"senders": ["duolingo.com"], "subjects": ["Welcome to Duolingo"]}
+  },
+  {
+    "name": "Figma",
+    "domain": "figma.com",
+    "category": "developer",
+    "icon": "https://www.figma.com/favicon.ico",
+    "deletion_url": "https://www.figma.com/settings",
+    "deletion_difficulty": 1,
+    "deletion_notes": "Settings > Account > Delete account.",
+    "email_patterns": {"senders": ["figma.com"], "subjects": ["Welcome to Figma"]}
+  },
+  {
+    "name": "Stack Overflow",
+    "domain": "stackoverflow.com",
+    "category": "developer",
+    "icon": "https://stackoverflow.com/favicon.ico",
+    "deletion_url": "https://stackoverflow.com/users/delete/current",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Users > Edit Profile > Delete Profile. May not be possible if you have voted/posted content.",
+    "email_patterns": {"senders": ["stackoverflow.com", "stackoverflow.email"], "subjects": ["Stack Overflow"]}
+  },
+  {
+    "name": "npm",
+    "domain": "npmjs.com",
+    "category": "developer",
+    "icon": "https://www.npmjs.com/favicon.ico",
+    "deletion_url": "https://www.npmjs.com/settings/~/profile",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Must transfer or unpublish all packages first. Settings > Delete Account.",
+    "email_patterns": {"senders": ["npmjs.com"], "subjects": ["npm"]}
+  },
+  {
+    "name": "GitLab",
+    "domain": "gitlab.com",
+    "category": "developer",
+    "icon": "https://gitlab.com/favicon.ico",
+    "deletion_url": "https://gitlab.com/-/user_settings/account",
+    "deletion_difficulty": 1,
+    "deletion_notes": "User Settings > Account > Delete account. 7-day delay.",
+    "email_patterns": {"senders": ["gitlab.com"], "subjects": ["Welcome to GitLab"]}
+  },
+  {
+    "name": "Bitbucket",
+    "domain": "bitbucket.org",
+    "category": "developer",
+    "icon": "https://bitbucket.org/favicon.ico",
+    "deletion_url": "https://bitbucket.org/account/settings/",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Part of Atlassian account. Account Settings > Delete account.",
+    "email_patterns": {"senders": ["bitbucket.org"], "subjects": ["Bitbucket"]}
+  },
+  {
+    "name": "Shopify",
+    "domain": "shopify.com",
+    "category": "shopping",
+    "icon": "https://www.shopify.com/favicon.ico",
+    "deletion_url": "https://accounts.shopify.com/store-login",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Settings > Plan > Close store. Data retained for some time. Must email for full deletion.",
+    "email_patterns": {"senders": ["shopify.com"], "subjects": ["Shopify"]}
+  },
+  {
+    "name": "WordPress.com",
+    "domain": "wordpress.com",
+    "category": "productivity",
+    "icon": "https://wordpress.com/favicon.ico",
+    "deletion_url": "https://wordpress.com/me/account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Me > Account Settings > Close your account permanently.",
+    "email_patterns": {"senders": ["wordpress.com"], "subjects": ["Welcome to WordPress"]}
+  },
+  {
+    "name": "Medium",
+    "domain": "medium.com",
+    "category": "social_media",
+    "icon": "https://medium.com/favicon.ico",
+    "deletion_url": "https://medium.com/me/settings/security",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > Security > Delete account.",
+    "email_patterns": {"senders": ["medium.com"], "subjects": ["Welcome to Medium"]}
+  },
+  {
+    "name": "Quora",
+    "domain": "quora.com",
+    "category": "social_media",
+    "icon": "https://www.quora.com/favicon.ico",
+    "deletion_url": "https://www.quora.com/settings/account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > Privacy > Delete Account. May take 14 days.",
+    "email_patterns": {"senders": ["quora.com"], "subjects": ["Quora"]}
+  },
+  {
+    "name": "Tumblr",
+    "domain": "tumblr.com",
+    "category": "social_media",
+    "icon": "https://www.tumblr.com/favicon.ico",
+    "deletion_url": "https://www.tumblr.com/settings/account",
+    "deletion_difficulty": 1,
+    "deletion_notes": "Settings > Account > Delete account.",
+    "email_patterns": {"senders": ["tumblr.com"], "subjects": ["Welcome to Tumblr"]}
+  },
+  {
+    "name": "DoorDash",
+    "domain": "doordash.com",
+    "category": "food",
+    "icon": "https://www.doordash.com/favicon.ico",
+    "deletion_url": "https://www.doordash.com/consumer/privacy/manage/",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account > Manage Account > Delete Account.",
+    "email_patterns": {"senders": ["doordash.com"], "subjects": ["Welcome to DoorDash"]}
+  },
+  {
+    "name": "Grubhub",
+    "domain": "grubhub.com",
+    "category": "food",
+    "icon": "https://www.grubhub.com/favicon.ico",
+    "deletion_url": "https://www.grubhub.com/help/contact-us",
+    "deletion_difficulty": 4,
+    "deletion_notes": "Must contact customer service to request account deletion.",
+    "email_patterns": {"senders": ["grubhub.com"], "subjects": ["Grubhub", "Welcome"]}
+  },
+  {
+    "name": "Hulu",
+    "domain": "hulu.com",
+    "category": "streaming",
+    "icon": "https://www.hulu.com/favicon.ico",
+    "deletion_url": "https://secure.hulu.com/account",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Account > Cancel subscription first, then request deletion via privacy settings.",
+    "email_patterns": {"senders": ["hulu.com", "hulumail.com"], "subjects": ["Welcome to Hulu"]}
+  },
+  {
+    "name": "Disney+",
+    "domain": "disneyplus.com",
+    "category": "streaming",
+    "icon": "https://www.disneyplus.com/favicon.ico",
+    "deletion_url": "https://www.disneyplus.com/account/privacy-controls",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Account > Privacy Controls > Delete Account. Deletes entire Disney account.",
+    "email_patterns": {"senders": ["disneyplus.com", "disney.com"], "subjects": ["Disney"]}
+  },
+  {
+    "name": "Wish",
+    "domain": "wish.com",
+    "category": "shopping",
+    "icon": "https://www.wish.com/favicon.ico",
+    "deletion_url": "https://www.wish.com/settings/account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > Account Settings > Delete Account.",
+    "email_patterns": {"senders": ["wish.com"], "subjects": ["Wish"]}
+  },
+  {
+    "name": "Yelp",
+    "domain": "yelp.com",
+    "category": "social_media",
+    "icon": "https://www.yelp.com/favicon.ico",
+    "deletion_url": "https://www.yelp.com/profile_account_cancellation",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account Settings > Close Account.",
+    "email_patterns": {"senders": ["yelp.com"], "subjects": ["Welcome to Yelp"]}
+  },
+  {
+    "name": "Zillow",
+    "domain": "zillow.com",
+    "category": "real_estate",
+    "icon": "https://www.zillow.com/favicon.ico",
+    "deletion_url": "https://www.zillow.com/user/acct/email/",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Profile > Account Settings > Deactivate Account.",
+    "email_patterns": {"senders": ["zillow.com"], "subjects": ["Zillow"]}
+  },
+  {
+    "name": "Coursera",
+    "domain": "coursera.org",
+    "category": "education",
+    "icon": "https://www.coursera.org/favicon.ico",
+    "deletion_url": "https://www.coursera.org/account-settings",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account Settings > Delete Account.",
+    "email_patterns": {"senders": ["coursera.org"], "subjects": ["Welcome to Coursera"]}
+  },
+  {
+    "name": "Udemy",
+    "domain": "udemy.com",
+    "category": "education",
+    "icon": "https://www.udemy.com/favicon.ico",
+    "deletion_url": "https://www.udemy.com/user/edit-account/",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account Settings > Close Account.",
+    "email_patterns": {"senders": ["udemy.com"], "subjects": ["Welcome to Udemy"]}
+  },
+  {
+    "name": "Khan Academy",
+    "domain": "khanacademy.org",
+    "category": "education",
+    "icon": "https://www.khanacademy.org/favicon.ico",
+    "deletion_url": "https://www.khanacademy.org/settings/account",
+    "deletion_difficulty": 1,
+    "deletion_notes": "Settings > Delete your account.",
+    "email_patterns": {"senders": ["khanacademy.org"], "subjects": ["Khan Academy"]}
+  },
+  {
+    "name": "Evernote",
+    "domain": "evernote.com",
+    "category": "productivity",
+    "icon": "https://www.evernote.com/favicon.ico",
+    "deletion_url": "https://www.evernote.com/Privacy.action",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Submit deletion request via privacy center. May take up to 30 days.",
+    "email_patterns": {"senders": ["evernote.com"], "subjects": ["Welcome to Evernote"]}
+  },
+  {
+    "name": "Todoist",
+    "domain": "todoist.com",
+    "category": "productivity",
+    "icon": "https://todoist.com/favicon.ico",
+    "deletion_url": "https://todoist.com/app/settings/account",
+    "deletion_difficulty": 1,
+    "deletion_notes": "Settings > Account > Delete account.",
+    "email_patterns": {"senders": ["todoist.com"], "subjects": ["Todoist"]}
+  },
+  {
+    "name": "Mailchimp",
+    "domain": "mailchimp.com",
+    "category": "marketing",
+    "icon": "https://mailchimp.com/favicon.ico",
+    "deletion_url": "https://admin.mailchimp.com/account/pause-delete/",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account > Settings > Pause or Delete Account.",
+    "email_patterns": {"senders": ["mailchimp.com"], "subjects": ["Mailchimp", "Welcome"]}
+  },
+  {
+    "name": "Heroku",
+    "domain": "heroku.com",
+    "category": "developer",
+    "icon": "https://www.heroku.com/favicon.ico",
+    "deletion_url": "https://dashboard.heroku.com/account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account Settings > Delete Account at bottom of page.",
+    "email_patterns": {"senders": ["heroku.com"], "subjects": ["Heroku"]}
+  },
+  {
+    "name": "Vercel",
+    "domain": "vercel.com",
+    "category": "developer",
+    "icon": "https://vercel.com/favicon.ico",
+    "deletion_url": "https://vercel.com/account",
+    "deletion_difficulty": 1,
+    "deletion_notes": "Settings > Account > Delete Account.",
+    "email_patterns": {"senders": ["vercel.com"], "subjects": ["Vercel"]}
+  },
+  {
+    "name": "Netlify",
+    "domain": "netlify.com",
+    "category": "developer",
+    "icon": "https://www.netlify.com/favicon.ico",
+    "deletion_url": "https://app.netlify.com/user/settings",
+    "deletion_difficulty": 1,
+    "deletion_notes": "User Settings > Delete account.",
+    "email_patterns": {"senders": ["netlify.com"], "subjects": ["Netlify"]}
+  },
+  {
+    "name": "Cloudflare",
+    "domain": "cloudflare.com",
+    "category": "developer",
+    "icon": "https://www.cloudflare.com/favicon.ico",
+    "deletion_url": "https://dash.cloudflare.com/profile",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Profile > Communication > Delete Account. Must remove all domains first.",
+    "email_patterns": {"senders": ["cloudflare.com"], "subjects": ["Cloudflare", "Welcome"]}
+  },
+  {
+    "name": "DigitalOcean",
+    "domain": "digitalocean.com",
+    "category": "developer",
+    "icon": "https://www.digitalocean.com/favicon.ico",
+    "deletion_url": "https://cloud.digitalocean.com/account/security",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account > Security > Destroy Account. Must destroy all resources first.",
+    "email_patterns": {"senders": ["digitalocean.com"], "subjects": ["DigitalOcean"]}
+  },
+  {
+    "name": "Grammarly",
+    "domain": "grammarly.com",
+    "category": "productivity",
+    "icon": "https://www.grammarly.com/favicon.ico",
+    "deletion_url": "https://account.grammarly.com/account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account > Delete Account.",
+    "email_patterns": {"senders": ["grammarly.com"], "subjects": ["Welcome to Grammarly"]}
+  },
+  {
+    "name": "Strava",
+    "domain": "strava.com",
+    "category": "fitness",
+    "icon": "https://www.strava.com/favicon.ico",
+    "deletion_url": "https://www.strava.com/account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "My Account > Delete Your Account.",
+    "email_patterns": {"senders": ["strava.com"], "subjects": ["Welcome to Strava"]}
+  },
+  {
+    "name": "MyFitnessPal",
+    "domain": "myfitnesspal.com",
+    "category": "fitness",
+    "icon": "https://www.myfitnesspal.com/favicon.ico",
+    "deletion_url": "https://www.myfitnesspal.com/account/delete_account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > Delete Account.",
+    "email_patterns": {"senders": ["myfitnesspal.com"], "subjects": ["MyFitnessPal"]}
+  },
+  {
+    "name": "Robinhood",
+    "domain": "robinhood.com",
+    "category": "finance",
+    "icon": "https://robinhood.com/favicon.ico",
+    "deletion_url": "https://robinhood.com/account/settings",
+    "deletion_difficulty": 4,
+    "deletion_notes": "Must close all positions, withdraw funds, and contact support.",
+    "email_patterns": {"senders": ["robinhood.com"], "subjects": ["Robinhood"]}
+  },
+  {
+    "name": "Coinbase",
+    "domain": "coinbase.com",
+    "category": "finance",
+    "icon": "https://www.coinbase.com/favicon.ico",
+    "deletion_url": "https://www.coinbase.com/settings/account-activity",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Settings > Close Account. Must have zero balances.",
+    "email_patterns": {"senders": ["coinbase.com"], "subjects": ["Coinbase", "Welcome"]}
+  },
+  {
+    "name": "Binance",
+    "domain": "binance.com",
+    "category": "finance",
+    "icon": "https://www.binance.com/favicon.ico",
+    "deletion_url": "https://www.binance.com/en/my/security/account-activity",
+    "deletion_difficulty": 4,
+    "deletion_notes": "Security > Disable/Delete Account. Must withdraw all funds. 120-day hold on withdrawal addresses.",
+    "email_patterns": {"senders": ["binance.com"], "subjects": ["Binance"]}
+  },
+  {
+    "name": "Vimeo",
+    "domain": "vimeo.com",
+    "category": "streaming",
+    "icon": "https://vimeo.com/favicon.ico",
+    "deletion_url": "https://vimeo.com/settings/account/general",
+    "deletion_difficulty": 1,
+    "deletion_notes": "Settings > Account > Delete Your Account.",
+    "email_patterns": {"senders": ["vimeo.com"], "subjects": ["Vimeo"]}
+  },
+  {
+    "name": "SoundCloud",
+    "domain": "soundcloud.com",
+    "category": "streaming",
+    "icon": "https://soundcloud.com/favicon.ico",
+    "deletion_url": "https://soundcloud.com/settings/account",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > Account > Delete Account.",
+    "email_patterns": {"senders": ["soundcloud.com"], "subjects": ["SoundCloud", "Welcome"]}
+  },
+  {
+    "name": "Wix",
+    "domain": "wix.com",
+    "category": "productivity",
+    "icon": "https://www.wix.com/favicon.ico",
+    "deletion_url": "https://www.wix.com/account/account-settings",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account Settings > Close Account.",
+    "email_patterns": {"senders": ["wix.com"], "subjects": ["Wix"]}
+  },
+  {
+    "name": "Squarespace",
+    "domain": "squarespace.com",
+    "category": "productivity",
+    "icon": "https://www.squarespace.com/favicon.ico",
+    "deletion_url": "https://account.squarespace.com/account-settings",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account Settings > Delete Account. Must cancel subscriptions first.",
+    "email_patterns": {"senders": ["squarespace.com"], "subjects": ["Squarespace"]}
+  },
+  {
+    "name": "Indeed",
+    "domain": "indeed.com",
+    "category": "professional",
+    "icon": "https://www.indeed.com/favicon.ico",
+    "deletion_url": "https://secure.indeed.com/settings",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Account Settings > Delete Account.",
+    "email_patterns": {"senders": ["indeed.com"], "subjects": ["Indeed"]}
+  },
+  {
+    "name": "Glassdoor",
+    "domain": "glassdoor.com",
+    "category": "professional",
+    "icon": "https://www.glassdoor.com/favicon.ico",
+    "deletion_url": "https://www.glassdoor.com/member/account/settings_input.htm",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Account Settings > Close Account. Reviews may remain anonymous.",
+    "email_patterns": {"senders": ["glassdoor.com"], "subjects": ["Glassdoor"]}
+  },
+  {
+    "name": "Revolut",
+    "domain": "revolut.com",
+    "category": "finance",
+    "icon": "https://www.revolut.com/favicon.ico",
+    "deletion_url": "https://www.revolut.com/help/profile-plan/closing-your-account",
+    "deletion_difficulty": 3,
+    "deletion_notes": "Must be done via app. Profile > Close account. Withdraw all funds first.",
+    "email_patterns": {"senders": ["revolut.com"], "subjects": ["Revolut"]}
+  },
+  {
+    "name": "Wise",
+    "domain": "wise.com",
+    "category": "finance",
+    "icon": "https://wise.com/favicon.ico",
+    "deletion_url": "https://wise.com/user/account/closure",
+    "deletion_difficulty": 2,
+    "deletion_notes": "Settings > Close your account. Must withdraw all balances.",
+    "email_patterns": {"senders": ["wise.com", "transferwise.com"], "subjects": ["Wise", "TransferWise"]}
+  }
+]
