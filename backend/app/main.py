@@ -1,5 +1,6 @@
 from contextlib import asynccontextmanager
 
+from sqlalchemy import inspect, text
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -11,9 +12,19 @@ from app.api import (
 )
 
 
+def _run_migrations():
+    """Add any missing columns to existing tables."""
+    inspector = inspect(engine)
+    columns = [c["name"] for c in inspector.get_columns("scan_jobs")]
+    if "status_message" not in columns:
+        with engine.begin() as conn:
+            conn.execute(text("ALTER TABLE scan_jobs ADD COLUMN status_message VARCHAR(500)"))
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
+    _run_migrations()
     yield
 
 
