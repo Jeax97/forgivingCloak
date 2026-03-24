@@ -23,7 +23,7 @@ export default function Layout() {
       <aside className="w-64 border-r border-[hsl(var(--border))] bg-[hsl(var(--card))] flex flex-col">
         <div className="p-6 flex items-center gap-3">
           <Shield className="h-8 w-8 text-[hsl(var(--primary))]" />
-          <h1 className="text-xl font-bold">ForgiveCloak</h1>
+          <h1 className="text-xl font-bold">Forgiving Cloak</h1>
         </div>
 
         <nav className="flex-1 px-3 space-y-1">

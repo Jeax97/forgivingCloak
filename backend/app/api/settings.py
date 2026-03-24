@@ -91,7 +91,7 @@ def export_data_json(
     return StreamingResponse(
         StringIO(json.dumps(data, indent=2)),
         media_type="application/json",
-        headers={"Content-Disposition": "attachment; filename=forgivecloak-export.json"},
+        headers={"Content-Disposition": "attachment; filename=forgivingcloak-export.json"},
     )
 
 
@@ -128,5 +128,5 @@ def export_data_csv(
     return StreamingResponse(
         output,
         media_type="text/csv",
-        headers={"Content-Disposition": "attachment; filename=forgivecloak-export.csv"},
+        headers={"Content-Disposition": "attachment; filename=forgivingcloak-export.csv"},
     )

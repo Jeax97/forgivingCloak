@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     ENCRYPTION_KEY: str = "change-me-generate-a-fernet-key"
 
     # Database
-    DATABASE_URL: str = "sqlite:///./data/forgivecloak.db"
+    DATABASE_URL: str = "sqlite:///./data/forgivingcloak.db"
 
     # Redis
     REDIS_URL: str = "redis://redis:6379/0"

@@ -61,7 +61,7 @@ export default function Login() {
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[hsl(var(--primary))]/10">
             <Shield className="h-6 w-6 text-[hsl(var(--primary))]" />
           </div>
-          <CardTitle>{setupNeeded ? 'Welcome to ForgiveCloak' : 'Sign In'}</CardTitle>
+          <CardTitle>{setupNeeded ? 'Welcome to Forgiving Cloak' : 'Sign In'}</CardTitle>
           <CardDescription>
             {setupNeeded
               ? 'Create your admin account to get started'

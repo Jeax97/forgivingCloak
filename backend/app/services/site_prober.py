@@ -145,7 +145,7 @@ async def _probe_batch(
                 progress_callback(min(int(idx / total * 100), 99))
 
     async with httpx.AsyncClient(
-        headers={"User-Agent": "Mozilla/5.0 (compatible; ForgiveCloak/1.0)"},
+        headers={"User-Agent": "Mozilla/5.0 (compatible; ForgivingCloak/1.0)"},
         follow_redirects=True,
     ) as client:
         tasks = [_limited_probe(client, svc, i) for i, svc in enumerate(services)]

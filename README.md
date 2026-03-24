@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="frontend/public/favicon.svg" width="80" height="80" alt="ForgiveCloak" />
-  <h1>ForgiveCloak</h1>
+  <img src="frontend/public/favicon.svg" width="80" height="80" alt="Forgiving Cloak" />
+  <h1>Forgiving Cloak</h1>
   <p><strong>Self-hosted digital footprint scanner &amp; account deletion manager</strong></p>
   <p>
     <a href="#features">Features</a> •
@@ -19,7 +19,7 @@
 
 ---
 
-**ForgiveCloak** is a free, open-source, self-hosted alternative to commercial services like Mine, Deseat.me, and Saymine. It discovers where your email address is registered across the internet, and helps you delete those accounts — all from your own server, with your data never leaving your hands.
+**Forgiving Cloak** is a free, open-source, self-hosted alternative to commercial services like Mine, Deseat.me, and Saymine. It discovers where your email address is registered across the internet, and helps you delete those accounts — all from your own server, with your data never leaving your hands.
 
 ## Features
 
@@ -44,8 +44,8 @@
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/forgivecloak.git
-cd forgivecloak
+git clone https://github.com/yourusername/forgivingcloak.git
+cd forgivingcloak
 ```
 
 ### 2. Configure environment
@@ -92,10 +92,10 @@ Navigate to **http://localhost:3000** in your browser. On first launch, you'll b
 ```
 
 **4 containers:**
-- `forgivecloak-frontend` — React dashboard served by Nginx, proxies `/api` to backend
-- `forgivecloak-backend` — FastAPI REST API
-- `forgivecloak-worker` — Celery worker for background scan jobs
-- `forgivecloak-redis` — Redis for the Celery task queue
+- `forgivingcloak-frontend` — React dashboard served by Nginx, proxies `/api` to backend
+- `forgivingcloak-backend` — FastAPI REST API
+- `forgivingcloak-worker` — Celery worker for background scan jobs
+- `forgivingcloak-redis` — Redis for the Celery task queue
 
 ## Configuration
 
@@ -105,7 +105,7 @@ All configuration is done via environment variables (`.env` file):
 |----------|---------|-------------|
 | `SECRET_KEY` | *(required)* | JWT signing key. Generate a random one. |
 | `ENCRYPTION_KEY` | *(required)* | Fernet key for encrypting IMAP credentials at rest. |
-| `DATABASE_URL` | `sqlite:///./data/forgivecloak.db` | Database URL |
+| `DATABASE_URL` | `sqlite:///./data/forgivingcloak.db` | Database URL |
 | `REDIS_URL` | `redis://redis:6379/0` | Redis connection URL |
 | `CORS_ORIGINS` | `http://localhost:3000,http://localhost:5173` | Allowed CORS origins |
 | `HIBP_API_KEY` | *(optional)* | Have I Been Pwned API key |
@@ -122,19 +122,19 @@ For scanning Gmail, you have two options:
 **Option A: App Password (Easier)**
 1. Go to [Google Account > Security > App Passwords](https://myaccount.google.com/apppasswords)
 2. Generate an app password for "Mail"
-3. Use this password when adding your Gmail account in ForgiveCloak
+3. Use this password when adding your Gmail account in Forgiving Cloak
 
 **Option B: OAuth (More Secure)**
 1. Create a project at [Google Cloud Console](https://console.cloud.google.com/)
 2. Enable the Gmail API
 3. Create OAuth 2.0 credentials (Web application)
 4. Set the redirect URI to `http://localhost:8000/api/auth/google/callback`
-5. Add the Client ID and Secret in ForgiveCloak Settings
+5. Add the Client ID and Secret in Forgiving Cloak Settings
 
 ### Have I Been Pwned
 
 1. Purchase an API key at [haveibeenpwned.com/API/Key](https://haveibeenpwned.com/API/Key)
-2. Add it in ForgiveCloak Settings page
+2. Add it in Forgiving Cloak Settings page
 3. The HIBP scan option will become available
 
 ## Detection Methods
@@ -147,7 +147,7 @@ For scanning Gmail, you have two options:
 
 ## Supported Services
 
-ForgiveCloak includes a curated registry of 70+ popular services with:
+Forgiving Cloak includes a curated registry of 70+ popular services with:
 - Direct account deletion links
 - Deletion difficulty ratings (1-5)
 - Step-by-step deletion instructions

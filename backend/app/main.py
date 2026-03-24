@@ -18,7 +18,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="ForgiveCloak",
+    title="Forgiving Cloak",
     description="Self-hosted email account discovery and deletion manager",
     version="1.0.0",
     lifespan=lifespan,

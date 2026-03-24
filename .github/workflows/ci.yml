@@ -8,7 +8,7 @@ on:
     branches: [main]
 
 env:
-  DOCKER_IMAGE: forgivecloak/forgivecloak
+  DOCKER_IMAGE: forgivingcloak/forgivingcloak
 
 jobs:
   lint-backend:

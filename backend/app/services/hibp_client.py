@@ -57,7 +57,7 @@ def check_breaches(
 
     headers = {
         "hibp-api-key": api_key,
-        "user-agent": "ForgiveCloak/1.0",
+        "user-agent": "ForgivingCloak/1.0",
     }
 
     if progress_callback:

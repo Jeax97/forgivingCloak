@@ -1,7 +1,7 @@
 services:
   backend:
     build: ./backend
-    container_name: forgivecloak-backend
+    container_name: forgivingcloak-backend
     restart: unless-stopped
     ports:
       - "8000:8000"
@@ -20,7 +20,7 @@ services:
 
   worker:
     build: ./backend
-    container_name: forgivecloak-worker
+    container_name: forgivingcloak-worker
     restart: unless-stopped
     command: celery -A app.tasks.celery_app:celery_app worker --loglevel=info --concurrency=2
     env_file:
@@ -33,7 +33,7 @@ services:
 
   frontend:
     build: ./frontend
-    container_name: forgivecloak-frontend
+    container_name: forgivingcloak-frontend
     restart: unless-stopped
     ports:
       - "3000:80"
@@ -42,7 +42,7 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: forgivecloak-redis
+    container_name: forgivingcloak-redis
     restart: unless-stopped
     volumes:
       - redis-data:/data
