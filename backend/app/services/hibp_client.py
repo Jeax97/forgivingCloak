@@ -61,7 +61,7 @@ def check_breaches(
     }
 
     if progress_callback:
-        progress_callback(10)
+        progress_callback(10, "Querying breach database…")
 
     try:
         with httpx.Client(timeout=30) as client:
@@ -74,7 +74,7 @@ def check_breaches(
             if resp.status_code == 404:
                 logger.info("No breaches found for %s", email)
                 if progress_callback:
-                    progress_callback(100)
+                    progress_callback(100, "No breaches found")
                 return []
 
             if resp.status_code == 401:
@@ -122,9 +122,9 @@ def check_breaches(
         results.append(result)
 
         if progress_callback:
-            progress_callback(min(10 + int(i / total * 90), 99))
+            progress_callback(min(10 + int(i / total * 90), 99), f"Checking breach {i + 1}/{total}…")
 
     if progress_callback:
-        progress_callback(100)
+        progress_callback(100, f"{len(results)} breaches found")
 
     return results

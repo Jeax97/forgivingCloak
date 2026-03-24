@@ -48,7 +48,7 @@ export default function Scan() {
   useEffect(() => {
     const hasActive = jobs.some((j) => j.status === 'pending' || j.status === 'running')
     if (!hasActive) return
-    const interval = setInterval(fetchData, 3000)
+    const interval = setInterval(fetchData, 2000)
     return () => clearInterval(interval)
   }, [jobs, fetchData])
 
@@ -345,11 +345,20 @@ export default function Scan() {
                       </Badge>
                     </div>
                     {(job.status === 'running' || job.status === 'pending') && (
-                      <Progress value={job.progress} className="mt-2" />
+                      <div className="mt-2 space-y-1">
+                        <Progress value={job.progress} className="" />
+                        <p className="text-xs text-[hsl(var(--muted-foreground))]">
+                          {job.status === 'pending'
+                            ? 'Waiting for worker to pick up the task…'
+                            : job.status_message || `Scanning… ${job.progress}%`}
+                        </p>
+                      </div>
                     )}
                     <p className="text-xs text-[hsl(var(--muted-foreground))] mt-1">
-                      {job.services_found} services found
-                      {job.error_message && ` &middot; Error: ${job.error_message}`}
+                      {job.status === 'completed' && job.status_message
+                        ? job.status_message
+                        : `${job.services_found} services found`}
+                      {job.error_message && ` · Error: ${job.error_message}`}
                     </p>
                   </div>
                   <span className="text-xs text-[hsl(var(--muted-foreground))]">

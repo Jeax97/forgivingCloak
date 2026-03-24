@@ -133,6 +133,7 @@ class ScanJob(Base):
     status = Column(SAEnum(ScanStatus), default=ScanStatus.PENDING, nullable=False)
     progress = Column(Integer, default=0)  # 0-100
     services_found = Column(Integer, default=0)
+    status_message = Column(String(500), nullable=True)
     error_message = Column(Text, nullable=True)
     celery_task_id = Column(String(255), nullable=True)
     started_at = Column(DateTime, nullable=True)

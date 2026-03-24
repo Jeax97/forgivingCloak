@@ -78,22 +78,30 @@ def run_scan_job(self, job_id: int):
             status=ScanStatus.RUNNING,
             started_at=datetime.now(timezone.utc),
             celery_task_id=self.request.id,
+            status_message="Initializing scan…",
         )
 
-        def progress_callback(progress: int):
-            _update_job(db, job, progress=progress)
+        def progress_callback(progress: int, message: str | None = None):
+            kwargs: dict = {"progress": progress}
+            if message:
+                kwargs["status_message"] = message
+            _update_job(db, job, **kwargs)
 
         try:
             if job.scan_type == ScanType.IMAP:
+                _update_job(db, job, status_message="Connecting to mail server…")
                 results = _run_imap_scan(account, progress_callback)
             elif job.scan_type == ScanType.HIBP:
+                _update_job(db, job, status_message="Querying Have I Been Pwned…")
                 results = _run_hibp_scan(db, account, progress_callback)
             elif job.scan_type == ScanType.PROBE:
+                _update_job(db, job, status_message="Probing service endpoints…")
                 results = _run_probe_scan(account, progress_callback)
             else:
                 results = []
 
             # Store results
+            _update_job(db, job, status_message=f"Processing {len(results)} results…")
             new_count = 0
             for result in results:
                 added = _add_discovered_service(
@@ -108,6 +116,7 @@ def run_scan_job(self, job_id: int):
                 status=ScanStatus.COMPLETED,
                 progress=100,
                 services_found=new_count,
+                status_message=f"Done — {new_count} new services found",
                 completed_at=datetime.now(timezone.utc),
             )
 
@@ -117,6 +126,7 @@ def run_scan_job(self, job_id: int):
                 db, job,
                 status=ScanStatus.FAILED,
                 error_message=str(e),
+                status_message="Scan failed",
                 completed_at=datetime.now(timezone.utc),
             )
 

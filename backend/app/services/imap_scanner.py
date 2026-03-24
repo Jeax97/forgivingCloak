@@ -154,8 +154,11 @@ def scan_imap(
 
         if total == 0:
             if progress_callback:
-                progress_callback(100)
+                progress_callback(100, "No emails to scan")
             return []
+
+        if progress_callback:
+            progress_callback(0, f"Scanning {total} emails…")
 
         processed = 0
         for msg in mailbox.fetch(AND(all=True), mark_seen=False, bulk=50):
@@ -164,7 +167,8 @@ def scan_imap(
 
             processed += 1
             if progress_callback and processed % 20 == 0:
-                progress_callback(min(int(processed / total * 100), 99))
+                pct = min(int(processed / total * 100), 99)
+                progress_callback(pct, f"Scanning emails ({processed}/{total})…")
 
             if not _is_signup_email(msg):
                 continue
@@ -224,13 +228,17 @@ def scan_imap_oauth(
     total = len(all_uids)
     processed = 0
 
+    if progress_callback:
+        progress_callback(0, f"Scanning {total} matching emails…")
+
     for uid in all_uids:
         if settings.IMAP_MAX_EMAILS and processed >= settings.IMAP_MAX_EMAILS:
             break
 
         processed += 1
         if progress_callback and processed % 10 == 0:
-            progress_callback(min(int(processed / total * 100), 99))
+            pct = min(int(processed / total * 100), 99)
+            progress_callback(pct, f"Scanning emails ({processed}/{total})…")
 
         _, msg_data = imap.fetch(uid, "(BODY.PEEK[HEADER.FIELDS (FROM SUBJECT)])")
         if not msg_data or not msg_data[0]:
@@ -257,6 +265,6 @@ def scan_imap_oauth(
     imap.logout()
 
     if progress_callback:
-        progress_callback(100)
+        progress_callback(100, f"Scan complete — {len(detected)} services detected")
 
     return list(detected.values())

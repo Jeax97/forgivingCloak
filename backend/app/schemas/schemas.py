@@ -76,6 +76,7 @@ class ScanJobResponse(BaseModel):
     status: str
     progress: int
     services_found: int
+    status_message: Optional[str]
     error_message: Optional[str]
     started_at: Optional[datetime]
     completed_at: Optional[datetime]

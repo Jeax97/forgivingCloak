@@ -31,6 +31,7 @@ export interface ScanJob {
   status: string
   progress: number
   services_found: number
+  status_message: string | null
   error_message: string | null
   started_at: string | null
   completed_at: string | null

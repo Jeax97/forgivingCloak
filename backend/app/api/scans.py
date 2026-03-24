@@ -101,6 +101,7 @@ def start_scan(
             email_account_id=account.id,
             scan_type=scan_type,
             status=ScanStatus.PENDING,
+            status_message="Queued, waiting for worker…",
         )
         db.add(job)
         db.flush()

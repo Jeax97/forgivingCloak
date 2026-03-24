@@ -142,7 +142,7 @@ async def _probe_batch(
             if result:
                 results.append(result)
             if progress_callback and idx % 5 == 0:
-                progress_callback(min(int(idx / total * 100), 99))
+                progress_callback(min(int(idx / total * 100), 99), f"Probing service {idx + 1}/{total}…")
 
     async with httpx.AsyncClient(
         headers={"User-Agent": "Mozilla/5.0 (compatible; ForgivingCloak/1.0)"},
@@ -152,7 +152,7 @@ async def _probe_batch(
         await asyncio.gather(*tasks, return_exceptions=True)
 
     if progress_callback:
-        progress_callback(100)
+        progress_callback(100, f"{len(results)} services detected via probing")
 
     return results
 
@@ -170,7 +170,7 @@ def probe_services(
     services = _load_probeable_services()
     if not services:
         if progress_callback:
-            progress_callback(100)
+            progress_callback(100, "No probeable services configured")
         return []
 
     return asyncio.run(_probe_batch(services, email, progress_callback))
